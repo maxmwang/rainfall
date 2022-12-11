@@ -5,6 +5,7 @@ import time
 import random
 import os
 import sys
+import subprocess
 
 
 colors = {
@@ -125,9 +126,9 @@ DROPSHAPES =["|", "│", "┃", "╽", "╿", "║", "┆", "┇", "┊", "┋",
 args = Get_Arguments()
 intensity = args.get("intensity", 1)
 timing = args.get("timing", 0.08)
-drop_colors = args.get("colors", ["blue", "b_blue"])
+drop_colors = args.get("colors", ["blue", "b_blue", "white", "b_white"])
 
-
+subprocess.Popen(["mpv", "--no-video", "--no-terminal", "--no-config", "--volume=50", "--loop=inf", "https://www.youtube.com/watch?v=b7pFajGkDHsttps://www.youtube.com"])
 
 print('\033[?25l', end="") ## hides the cursor
 New_Drop()
@@ -142,21 +143,4 @@ try:
 except KeyboardInterrupt:
     Clear_Screen()
     print('\033[?25h', end="") # makes cursor visible again
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
